@@ -1,4 +1,5 @@
 package com.Breno.campsolidarium.repository;
+import com.Breno.campsolidarium.model.Insumo;
 import com.Breno.campsolidarium.model.Ong;
 
 
@@ -9,33 +10,12 @@ public class OngRepository {
 
     private static final List<Ong> ongs = new ArrayList<>();
 
-    static {
-
-        Ong o = new Ong();
-
-        o.setCodigo(1);
-        o.setNome("Todos pelo Agreste");
-        o.setLogin("agreste");
-        o.setSenha("123");
-
-        ongs.add(o);
-
-        o = new Ong();
-
-        o.setCodigo(2);
-        o.setNome("Ajuda Recife");
-        o.setLogin("recife");
-        o.setSenha("456");
-
-        ongs.add(o);
-    }
+    public static void create(Ong ong) {
+    ongs.add(ong);
+}
 
     private OngRepository() {
 
-    }
-
-    public static void create(Ong o) {
-        ongs.add(o);
     }
 
     public static Ong read(int codigo) {

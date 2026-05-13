@@ -1,26 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package com.Breno.campsolidarium.controller;
 
-import com.Breno.campsolidarium.repository.OngRepository;
+import com.Breno.campsolidarium.repository.InsumoRepository;
 import com.Breno.campsolidarium.model.Insumo;
-import com.Breno.campsolidarium.model.Ong;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+
 import java.util.List;
 
-/**
- *
- * @author breno
- */
 @WebServlet(name = "Insumos", urlPatterns = {"/Insumos"})
 public class Insumos extends HttpServlet {
 
@@ -30,7 +22,8 @@ public class Insumos extends HttpServlet {
             HttpServletResponse response
     ) throws ServletException, IOException {
 
-        List<Ong> insumos = OngRepository.readAll();
+        List<Insumo> insumos =
+                InsumoRepository.readAll();
 
         request.getSession().setAttribute(
                 "insumos",
@@ -65,7 +58,7 @@ public class Insumos extends HttpServlet {
         insumo.setMarca(marca);
         insumo.setCategoria(categoria);
 
-        OngRepository.create(insumo);
+        InsumoRepository.create(insumo);
 
         HttpSession session = request.getSession();
 

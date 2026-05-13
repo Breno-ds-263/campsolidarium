@@ -8,26 +8,6 @@ public class InsumoRepository {
 
     private static final List<Insumo> insumos = new ArrayList<>();
 
-    static {
-
-        Insumo i = new Insumo();
-
-        i.setCodigo(1);
-        i.setNome("Água Mineral");
-        i.setMarca("Indaiá");
-        i.setCategoria("Alimento");
-
-        insumos.add(i);
-
-        i = new Insumo();
-
-        i.setCodigo(2);
-        i.setNome("Camisa");
-        i.setMarca("Hering");
-        i.setCategoria("Vestuário");
-
-        insumos.add(i);
-    }
 
     private InsumoRepository() {
 

@@ -9,26 +9,7 @@ public class EmergenciaRepository {
 
     private static final List<Emergencia> emergencias = new ArrayList<>();
 
-    static {
-
-        Emergencia e = new Emergencia();
-
-        e.setCodigo(1);
-        e.setLocal("Caruaru");
-        e.setTipo("Terremoto");
-        e.setDescricao("Desabrigados precisando de ajuda");
-
-        emergencias.add(e);
-
-        e = new Emergencia();
-
-        e.setCodigo(2);
-        e.setLocal("Recife");
-        e.setTipo("Alagamento");
-        e.setDescricao("Famílias afetadas pelas chuvas");
-
-        emergencias.add(e);
-    }
+    
 
     private EmergenciaRepository() {
 
